@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstarp-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+     <!-- ===== Link Swiper's CSS ===== -->
+     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+     <!-- ===== Fontawesome CDN Link ===== -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <title>Edit profile</title>
+
+
+    <style>
+        .first{
+            margin-left: 40px;
+        }
+        .main_section{
+            margin-left:40px;
+        }
+        .btn{
+            font-size: 40px; 
+            width: 40px;
+           text-align: center;
+            border: 0px;
+        }
+        #preview {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          margin-bottom: 10px;
+          margin-left: 20px;
+      }
+      .lab{
+        padding-right: 50px;
+        padding-left:20px;
+        padding-bottom: 20px;
+      }
+      .vl{
+        border-left: 6px solid black;
+        height: 500px;
+
+      }
+      .inp{
+        background-color: #dcd6d6;
+        border-radius:4px;
+        border:none;
+      }
+      
+    </style>
+</head>
+<body>
+    <!--header-->
+    <div class="container-fluid px-0" id="headerFragment" th:fragment="headerFragment">
+        <nav class="navbar navbar-expand-sm navbar-light bg-dark">
+
+            <a class="navbar-brand" href="/"> <img th:src="images\homework logo img.png" class="logo" /></a>
+            <button class="navbar-toggler text-light" type="button" data-toggle="collapse"
+                data-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-light"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active px-4">
+                        <a class="nav-link text-light" href="/">Home</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link text-light" href="/">Pricing</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link text-light" href="/">About</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link text-light" href="/">Contact</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link text-light" href="/">FAQ</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link text-light">Sigin In</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid" style="background-color: #E7E7E7;">
+        <div class="first"style="background-color: #E7E7E7;"> 
+            <span><button class="btn" onclick="gotopreviouspage()" style="background-color: #E7E7E7;"><a href="worker_dashboard.html"><</a></button></span>
+            <h1 style="color:#9100FF; text-align:center; padding-bottom:25px">Edit Profile</h1>
+        </div>
+
+     <div class="card-group" style="background-color: #E7E7E7;">
+        
+     <div class="card "  style="background-color: #E7E7E7; border:0cm;border-right:1px solid black">
+    <h4 style="color: #9100FF; text-align:center;padding-bottom:30px;" >Personal Info</h4>
+  <div class="container">
+  <div id="imagePreview">
+    <div class="card-group">
+      <div class="card" style="background-color: #E7E7E7; border:0cm ;max-width:250px ;padding-left:20px">
+        <img id="preview" src="images/upload.png" alt=""  onclick="document.getElementById('imageInput').click()">
+        <label for="Username" class="lab">Username</label>
+        <label for="Email" class="lab">Email Id</label>
+        <label for="" class="lab">Contact</label>
+        <label for="" class="lab">Age</label>
+        <label for=""class="lab">Gender</label>
+        <label for="" class="lab">Service Count</label>
+        <label for="" class="lab">From</label> 
+        <label for="" class="lab">Description</label>  
+        <img id="preview" src="images/upload.png" alt="" style="margin-top:30px ;"  onclick="document.getElementById('imageInput').click()">
+      </div>
+      <div class="card" style="text-align: center;background-color: #E7E7E7; border:0cm">
+        <button class="lab"  style="border:none ;background-color: #E7E7E7;padding-left: 0;margin-top:10px" onclick="document.getElementById('imageInput').click()">Add Profile Picture</button>
+        <input type="file" id="imageInput" accept="image/* " style="display: none;">
+        <input type="text" name="Username" placeholder="Enter username" class="inp"><br>
+        <input type="email" name="Email" placeholder="name@gmail.com" class="inp"><br>
+        <input type="text" placeholder="934XXXXXXX" class="inp"><br>
+        <input type="text" class="inp"><br>
+        <select type="text" class="inp">
+          <option value="Male" class="inp" >Male</option>
+          <option value="" class="inp">Female</option>
+        </select> <br>
+        <input type="text" class="inp" ><br>
+        <input type="text" class="inp"><br>
+        <textarea type="text" rows="3" class="inp"></textarea><br>
+        <button style="border:none ;background-color: #E7E7E7;padding-left: 0;" onclick="document.getElementById('imageInput').click()">Upload Aadhar</button>
+      </div>
+  </div>
+</div>
+</div>
+ </div>
+
+        <div class="card"  style="background-color: #E7E7E7; border:0cm;">
+       <h4  style="color: #9100FF;text-align:center ;padding-bottom:30px;">Work & Education Details</h4>
+        <div class="card-group">
+            <div class="card" style="background-color: #E7E7E7; border:0cm ;max-width:250px ;padding-left:20px">  
+              <label for=""class="lab">Work Type</label>
+              <label for="" class="lab">About</label>
+              <label for="" class="lab" style="margin-top:25px;">Work Experience</label> 
+              <label for="" class="lab" style="margin-top:10px;">Qualification</label>  
+              <img id="preview" src="images/upload.png" alt=""  ;"  onclick="document.getElementById('imageInput').click()">
+            </div>
+            <div class="card" style="text-align: center;background-color: #E7E7E7; border:0cm">
+              <input type="text" class="inp"><br>
+              <textarea type="text" rows="2" class="inp"></textarea><br>
+              <input type="text"  class="inp"><br>
+              <input type="text" class="inp"><br>
+              <button style="border:none ;background-color: #E7E7E7;padding-left: 0;margin-top:20px" onclick="document.getElementById('imageInput').click()">License of Work</button>
+            </div>
+            </div>
+
+            <h4  style="color: #9100FF;text-align:center ;padding-bottom:30px;">Booking Details</h4>
+            <div class="card-group">
+                <div class="card" style="background-color: #E7E7E7; border:0cm ;max-width:250px ;padding-left:20px">  
+                  <label for=""class="lab">Available Shifts</label>
+                  <label for="" class="lab">Area of Service</label>
+                  <label for="" class="lab" >Cancellation and Refund Policy</label> 
+                </div>
+                <div class="card" style="text-align: center;background-color: #E7E7E7; border:0cm">
+                  <select name="" id="" class="inp">
+                    <option value="">Day</option>
+                    <option value="">Night</option>
+                    <option value="">Both</option>
+                  </select><br>
+                  <input type="text" class="inp"><br>
+                  <input type="text" class="inp"><br>
+                </div>
+                </div>
+
+       </div>
+    </div>
+
+    <div class="bottom" style="text-align:center;padding-top:10px;padding-bottom:10px">
+        <button class="btn-dark"  style="border-radius: 5px;">Confirm</button>
+    </div>
+   
+
+
+
+       <script>
+        // JavaScript to handle image preview and upload
+        const imageInput = document.getElementById("imageInput");
+        const preview = document.getElementById("preview");
+        const uploadButton = document.getElementById("uploadButton");
+      
+        imageInput.addEventListener("change", function () {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+                preview.style.display = "none";
+            }
+        });
+      
+        uploadButton.addEventListener("click", function () {
+            if (imageInput.files.length > 0) {
+                const file = imageInput.files[0];
+                // You can add code here to upload the file to a server using AJAX or fetch API
+                // For this example, we're only displaying the uploaded image on the page.
+                alert("Image uploaded successfully!");
+                imageInput.value = ""; // Clear the input
+            } else {
+                alert("Please select an image to upload.");
+            }
+        });
+      </script>
+</body>
+</html>
